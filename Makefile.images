@@ -45,3 +45,4 @@ m-svg: $(SVG)
 
 clean::
 	rm -f $(GEN)
+	

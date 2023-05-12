@@ -22,6 +22,9 @@ GEN_JGR=
 # 	cdf_pct \
 # 	avg_ffi \
 # 	reports-30
+# count-evol-3 \
+# count-evol-3-high \
+
 DIR_IMG=birth-and-death-Intr \
 birth-and-death-IsNull \
 birth-and-death-Lock \
@@ -29,8 +32,6 @@ birth-and-death-LockIntr \
 birth-and-death-NullRef \
 birth-and-death-Range \
 birth-and-death-Var \
-count-evol-3-high \
-count-evol-3 \
 count-evol-3only-high \
 count-evol-3only
 
