@@ -4,24 +4,36 @@ R_PDF=lifespan-min-max.pdf \
 GEN_JGR=
 #	error-rate-by-churn.jgr    \
 #	error-rate-by-X.jgr
-DIR_IMG=notes-evol-kind        \
-	error-rate-by-age      \
-	error-rate-by-age-4-241-lin6b-all_fcts \
-	error-rate-by-fct_size \
-	error-rate-by-fct_size-4-241-log6b-all_fcts \
-	error-rate-by-fct_size-4-241-log6b-noted_fcts \
-	error-rate-by-fct_size-4-241-lin4b-all_fcts \
-	error-rate-by-fct_size-4-241-lin4b-noted_fcts \
-	fct_size_distrib \
-	fct_size_distrib-241 \
-	occ \
-	faults_churn_evol \
-	faults_churn \
-	lifetime_across \
-	cdf \
-	cdf_pct \
-	avg_ffi \
-	reports-30
+# DIR_IMG=notes-evol-kind        \
+# 	error-rate-by-age      \
+# 	error-rate-by-age-4-241-lin6b-all_fcts \
+# 	error-rate-by-fct_size \
+# 	error-rate-by-fct_size-4-241-log6b-all_fcts \
+# 	error-rate-by-fct_size-4-241-log6b-noted_fcts \
+# 	error-rate-by-fct_size-4-241-lin4b-all_fcts \
+# 	error-rate-by-fct_size-4-241-lin4b-noted_fcts \
+# 	fct_size_distrib \
+# 	fct_size_distrib-241 \
+# 	occ \
+# 	faults_churn_evol \
+# 	faults_churn \
+# 	lifetime_across \
+# 	cdf \
+# 	cdf_pct \
+# 	avg_ffi \
+# 	reports-30
+DIR_IMG=birth-and-death-Intr \
+birth-and-death-IsNull \
+birth-and-death-Lock \
+birth-and-death-LockIntr \
+birth-and-death-NullRef \
+birth-and-death-Range \
+birth-and-death-Var \
+count-evol-3-high \
+count-evol-3 \
+count-evol-3only-high \
+count-evol-3only
+
 #tool_usage
 DIR_JGR=$(DIR_IMG:%=%.jgr)
 R_EPS=$(R_PDF:%.pdf=%.eps)
@@ -46,11 +58,8 @@ IMAGES_JGR=$(wildcard *.jgr)
 
 AVG=$(GEN_JGR:%.jgr=%.Avg.data)
 
-all: from_db $(R_EPS)
+all: $(DIR_JGR)
 	$(MAKE) m-all
-
-from_db:
-	$(MAKE) -C $@
 
 include Makefile.images
 
@@ -61,6 +70,7 @@ clean::
 	rm -f *~
 
 rate: $(GEN_JGR)
+
 
 #size.jgr: ../experiments/size/gr/code-size-stacked.jgr
 #	ln -sf $^ $@
@@ -109,5 +119,5 @@ $(DATA_CMP):
 #	./get_deaths_by_churn.sh $(@:deaths_churn.%.data=%)
 #$(DATA_FLT_RATE_CHURN):
 #	./get_flt_rate_by_churn.sh $(@:flt_rate_churn.%.data=%)
-
 #cmp-rate-evol-dir.Avg.data
+#modified: https://github.com/coccinelle/linux-study-figures
