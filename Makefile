@@ -33,7 +33,10 @@ birth-and-death-NullRef \
 birth-and-death-Range \
 birth-and-death-Var \
 count-evol-3only-high \
-count-evol-3only
+count-evol-3only \
+count-evol-3 \
+count-evol-3-high 
+
 
 #tool_usage
 DIR_JGR=$(DIR_IMG:%=%.jgr)
